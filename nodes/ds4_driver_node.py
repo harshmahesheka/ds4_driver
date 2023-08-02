@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-
+import os
+os.environ["ROS_NAMESPACE"] = "/bluetooth_teleop"
 from ds4_driver.logger import Logger
 from ds4_driver.controller_ros import ControllerRos
 
@@ -27,6 +28,9 @@ def main():
 
     device_addr = rospy.get_param("~device_addr", None)
     backend_type = rospy.get_param("~backend", "hidraw")
+    rospy.set_param("~use_standard_msgs", "true")
+    rospy.set_param("~autorepeat_rate", 10)
+
 
     controller = ControllerRos()
 
