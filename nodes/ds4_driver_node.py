@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-import os
-os.environ["ROS_NAMESPACE"] = "/bluetooth_teleop"
 from ds4_driver.logger import Logger
 from ds4_driver.controller_ros import ControllerRos
 
